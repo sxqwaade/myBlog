@@ -1,0 +1,21 @@
+extends layout
+
+block content
+    div(class="wrap_top_nav")
+    nav(id="top_nav")
+        ul(class="inline-style clearfix")
+            li(class="active")
+                a(href="#/")
+                {{txt.home}}
+    li(class="active")
+        a(href="#/{{login.url}}")
+    {{login.name}}
+    li(class="active")
+        a(href="#/{{signup.url}}")
+    {{signup.name}}
+    div(class="page" ng-view="")
+
+
+
+
+
