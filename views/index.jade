@@ -1,16 +1,25 @@
 extends layout
 
 block content
-  div(class="wrap_top_nav")
-    nav(id="top_nav")
-      ul(class="inline-style clearfix")
-        li(class="active")
-          a(href="#/")
-            {{txt.home}}
-        li(class="active")
-          a(href="#/{{login.url}}")
-            {{login.name}}
-        li(class="active")
-          a(href="#/{{signup.url}}")
-            {{signup.name}}
-  div(class="page" ng-view="")
+  nav(class="navbar navbar-default navbar-fixed-top")
+    div(class="container")
+        div(class="navbar-header")
+            button(type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false")
+              span(class="sr-only").
+                Toggle navigation
+              span(class="icon-bar")
+              span(class="icon-bar")
+              span(class="icon-bar")
+            a(class="navbar-brand" href="/").
+              MyBlog
+        div(class="collapse navbar-collapse" id="bs-example-navbar-collapse-1")
+            ul(class="nav navbar-nav navbar-right")
+              li(class="active")
+                a(href="index.html").
+                  Home
+              li
+                a(href="").
+                  About me
+              li
+                a(href="").
+                  Github

@@ -49,7 +49,8 @@ module.exports = function(grunt) {
                     banner: '/* Myblog minified css file */'
                 },
                 files: {
-                    'dest/myBlog.css': ['public/css/base']
+                    'public/dest/css/myBlog.css': ['public/themes/Wagon/css/bootstrap.min.css','public/themes/Wagon/css/font-awesome.min.css','public/themes/Wagon/css/animate.css','public/themes/Wagon/css/style.css'],
+                    'public/dest/css/reset.css':['public/css/reset.css']
                 }
             }
         },
@@ -67,11 +68,32 @@ module.exports = function(grunt) {
                 src : 'dest/myBlog.js',
                 dest : 'dest/myBlog.min.js'
             }
+        },
+        sass: {
+            options: {
+                sourceMap: true
+            },
+            dist: {
+                files: {
+                    'public/css/reset.css': 'public/sass/reset.scss'
+                }
+            }
+        },
+        watch: {
+            scripts: {
+                files: ['public/sass/**/*.scss'],
+                tasks: ["sass"], //tasks: ['sass',"concat:kaluli","less"],
+                options: {
+                    spawn: false,
+                }
+            }
         }
     });
+    grunt.loadNpmTasks('grunt-sass');
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-requirejs');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
+    grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.registerTask('default', ['requirejs','cssmin','concat', 'uglify']);
 };
