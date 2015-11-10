@@ -72,37 +72,3 @@ define(['../app', 'i18n!resources/nls/res', '../../background/images'], function
         };
     });
 });
-/*
- define([ 'i18n!resources/nls/res'], function (res) {
- var LayoutController=['$scope','$http','$window', function ($scope, $http, $window) {
- $http.get('/checklogin').success(function (user) {
- $scope.resetLogin(user);
- });
- $scope.txt={
- home:res.welcome
- }
- $scope.resetLogin = function (user) {
- if (user.name) {
- $scope.login = {
- url:'logout',
- name:res.logout
- };
-
- $scope.signup = {
- url:'',
- name:'welcome:' + user.name
- };
- } else {
- $scope.login = {
- url:'login',
- name:res.login
- };
- $scope.signup = {
- url:'signup',
- name:'SignUp'
- };
- }
- };
- } ];
- return LayoutController;
- });*/

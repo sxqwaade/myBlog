@@ -3,16 +3,18 @@ require.config({
     paths: {
         jquery: '../lib/jquery/jquery-1.8.2.min',
         bootstrap: '../lib/bootstrap/js/bootstrap',
-        underscore: '../lib/underscore/underscore',
+        //underscore: '../lib/underscore/underscore',
         angular: '../lib/angular/angular',
         angularResource: '../lib/angular/angular-resource',
-        text: '../lib/require/text',
+        //angularSanitize: '../lib/angular/angular-sanitize',
+        //showdown: '../lib/Showdown.min.js',
+        //text: '../lib/require/text',
         i18n:'../lib/require/i18n',
         modernizr:'../lib/modernizr',
         html5shiv:'../lib/html5shiv',
-        mcore:'../lib/mcore.min',
-        fullscreen:'../lib/fullscreen',
-        mcustomscrollbar:'../lib/jquery.mCustomScrollbar.concat.min',
+        //mcore:'../lib/mcore.min',
+        //fullscreen:'../lib/fullscreen',
+        //mcustomscrollbar:'../lib/jquery.mCustomScrollbar.concat.min',
         detectbrowser:'../lib/detectbrowser'
         //res:'../resources/nls/res'
 
@@ -20,9 +22,10 @@ require.config({
     shim: {
         'angular' : {'exports' : 'angular'},
         'angular-resource' : {deps:['angular']},
+        //'angular-sanitize' : {deps:['angular']},
         'bootstrap': {deps:['jquery']},
-        'mcustomscrollbar':{deps:['jquery']},
-        'underscore': {exports: '_'},
+        //'mcustomscrollbar':{deps:['jquery']},
+        //'underscore': {exports: '_'},
         'detectbrowser':{deps:['modernizr']}
         /*,
         'res':{exports:'res'}*/
@@ -40,11 +43,11 @@ require.config({
 require(['angular',
          'app',
          'jquery',
-          'fullscreen',
-          'mcore',
+          //'fullscreen',
+          //'mcore',
          'controllers/layout',
          'controllers/index',
-         'directives/compare',
+         //'directives/markdown',
          'routes',
          'detectbrowser'
 ], function (angular) {
