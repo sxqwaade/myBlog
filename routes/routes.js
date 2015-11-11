@@ -11,10 +11,8 @@ var user = require('./user');
 var blog = require('./blog');
 module.exports = function (app) {
     app.get('/', index.index);
-    app.get('/list', user.list);
     app.post('/blog', blog.create);
     app.get('/bloglist', blog.list);
-    app.post('/removeblog',blog.remove);
     app.get('/user', user.login);
     app.post('/signup', user.create);
     app.post('/login', user.login);
