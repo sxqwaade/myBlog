@@ -1,17 +1,10 @@
 'use strict';
-define(['app'], function ( app ) {
-    app.provider('markdownConverter', function () {
-        var opts = {};
-        return {
-            config: function (newOpts) {
-                opts = newOpts;
-            },
-            $get: function () {
-                return new Showdown.converter(opts);
-            }
-        };
-    });
-    app.directive('btfMarkdown', ['$sanitize', 'markdownConverter', function ($sanitize, markdownConverter) {
+define(['../app',
+    '../providers/markdownConverter',
+    'angularSanitize'], function ( app ) {
+
+    app.directive('btfMarkdown',['$sanitize','markdownConverter',function ($sanitize, markdownConverter) {
+
         return {
             restrict: 'AE',
             link: function (scope, element, attrs) {
@@ -21,6 +14,7 @@ define(['app'], function ( app ) {
                         element.html(html);
                     });
                 } else {
+                    console.log(element.text())
                     var html = $sanitize(markdownConverter.makeHtml(element.text()));
                     element.html(html);
                 }

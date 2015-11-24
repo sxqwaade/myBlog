@@ -6,8 +6,9 @@ require.config({
         //underscore: '../lib/underscore/underscore',
         angular: '../lib/angular/angular',
         angularResource: '../lib/angular/angular-resource',
-        //angularSanitize: '../lib/angular/angular-sanitize',
-        //showdown: '../lib/Showdown.min.js',
+        angularSanitize: '../lib/angular/angular-sanitize',
+        angularMocks:'../lib/angular/angular-mocks',
+        showdown: '../lib/Showdown.min',
         //text: '../lib/require/text',
         i18n:'../lib/require/i18n',
         modernizr:'../lib/modernizr',
@@ -22,14 +23,13 @@ require.config({
     shim: {
         'angular' : {'exports' : 'angular'},
         'angular-resource' : {deps:['angular']},
-        //'angular-sanitize' : {deps:['angular']},
+        'angular-sanitize' : {deps:['angular']},
         'bootstrap': {deps:['jquery']},
+        'angularMocks':{deps:['angular']},
         //'mcustomscrollbar':{deps:['jquery']},
         //'underscore': {exports: '_'},
         'detectbrowser':{deps:['modernizr']}
-        /*,
-        'res':{exports:'res'}*/
-
+        //'res':{exports:'res'}
     },
     priority: [
         "angular"
@@ -47,7 +47,6 @@ require(['angular',
           //'mcore',
          'controllers/layout',
          'controllers/index',
-         //'directives/markdown',
          'routes',
          'detectbrowser'
 ], function (angular) {
