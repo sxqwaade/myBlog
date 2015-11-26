@@ -21,7 +21,7 @@ define([ 'i18n!resources/nls/res','jquery'], function (res,$) {
         $scope.title = res.title;
         $rootScope.title= res.title;
 
-        $http.get('/bloglist').success(function(data){
+        /*$http.get('/bloglist').success(function(data){
             if(data.err){
                 return $scope.err = data.err;
             }else{
@@ -33,7 +33,7 @@ define([ 'i18n!resources/nls/res','jquery'], function (res,$) {
             $http.post('/removeblog',{_id:id}).success(function(data){
                 $("#blog"+index).remove();
             });
-        };
+        };*/
     }];
 
     return IndexController;

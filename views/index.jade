@@ -1,7 +1,11 @@
 extends layout
 
+block staticfile
+    script(data-main="js/main" src="lib/require/require.min.js")
+    link(rel="stylesheet" href="css/reset.css" type='text/css' media="all")
+
 block content
-  nav(class="navbar navbar-default navbar-fixed-top")
+  nav(class="navbar navbar-default navbar-fixed-top" ng-controller='LayoutController')
     div(class="container")
         div(class="navbar-header")
             button(type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false")
@@ -15,7 +19,7 @@ block content
         div(class="collapse navbar-collapse" id="bs-example-navbar-collapse-1")
             ul(class="nav navbar-nav navbar-right")
               li(class="active")
-                a(href="/#/index.html").
+                a(href="/#/index").
                   Home
               li
                 a(href="/#/aboutme").

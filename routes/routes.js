@@ -6,17 +6,12 @@
  * To change this template use File | Settings | File Templates.
  */
 
-var index = require('./index');
-var user = require('./user');
-var blog = require('./blog');
-module.exports = function (app) {
-    app.get('/', index.index);
-    app.post('/blog', blog.create);
-    app.get('/bloglist', blog.list);
-    app.get('/user', user.login);
-    app.post('/signup', user.create);
-    app.post('/login', user.login);
-    app.get('/logout', user.logout);
-    app.get('/checklogin', index.getLoginUser);
-    app.get('/usercenter',user.index);
+var homepage = require('./index');
+var admin = require('./admin');
+
+module.exports = function(app){
+    app.get('/', homepage.index);
+    app.get('/getaboutme',admin.getaboutme);
+    app.post('/editAboutme',admin.editAboutme);
+    app.get('/admin',admin.index);
 };

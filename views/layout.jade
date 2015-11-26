@@ -1,12 +1,11 @@
 doctype html
-html(lang='zh-CN' ng-controller='LayoutController')
+html(lang='zh-CN')
   head
     meta(charset='utf8')
     style.
       [ng-cloak] {
         display: none;
       }
-    script(data-main="js/main" src="lib/require/require.min.js")
     title= title
     meta(name="viewport" content="width=device-width, initial-scale=1.0")
     meta(name="description" content="Shawn的私人博客")
@@ -14,10 +13,10 @@ html(lang='zh-CN' ng-controller='LayoutController')
     link(rel="shortcut icon" href="")
     // if lt IE 9
       script(type="text/javascript" charset="UTF-8" src="lib/html5shiv.js")
-    link(rel="stylesheet" href="dest/css/myBlog.css" type='text/css' media="all")
-    link(rel="stylesheet" href="css/reset.css" type='text/css' media="all")
+    link(rel="stylesheet" href="/dest/css/myBlog.css" type='text/css' media="all")
+    block staticfile
   body(class="ng-cloak" ng-cloak)
     block content
     block footer
-    script(type="text/javascript" charset="UTF-8" src="lib/prefixfree.min.js")
+    script(type="text/javascript" charset="UTF-8" src="/lib/prefixfree.min.js")
 

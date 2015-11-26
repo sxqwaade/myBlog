@@ -6,4 +6,11 @@ body {
   line-height: 50px;
   padding: 0 !important; }
 
+.admin{
+  margin-bottom: 20px;
+}
+
+#admin_aboutme{
+  min-height: 400px;
+}
 /*# sourceMappingURL=reset.css.map */

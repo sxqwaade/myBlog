@@ -6,45 +6,36 @@ require.config({
         angular: '../lib/angular/angular',
         angularResource: '../lib/angular/angular-resource',
         angularSanitize: '../lib/angular/angular-sanitize',
-        angularMocks:'../lib/angular/angular-mocks',
         showdown: '../lib/Showdown.min',
         i18n:'../lib/require/i18n',
         modernizr:'../lib/modernizr',
         html5shiv:'../lib/html5shiv',
-        detectbrowser:'../lib/detectbrowser',
-        scrollSpeed:'../lib/jquery/jQuery.scrollSpeed'
+        detectbrowser:'../lib/detectbrowser'
 
     },
     shim: {
         'angular' : {'exports' : 'angular'},
-        'angular-resource' : {deps:['angular']},
         'angular-sanitize' : {deps:['angular']},
         'bootstrap': {deps:['jquery']},
-        'scrollSpeed':{deps:['jquery']},
-        'angularMocks':{deps:['angular']},
         'detectbrowser':{deps:['modernizr']}
     },
     priority: [
         "angular"
     ],/*,
-    i18n: {
-        locale: 'ja-jp'
-    },*/
+     i18n: {
+     locale: 'ja-jp'
+     },*/
     urlArgs: 'v=1.0.0.1'
 });
 
 require(['angular',
-         'app',
-         'bootstrap',
-         'jquery',
-         'controllers/layout',
-         'controllers/index',
-         'routes',
-         'detectbrowser',
-         'scrollSpeed'
+    'app',
+    'bootstrap',
+    'jquery',
+    'controllers/layout',
+    'routes',
+    'detectbrowser'
 ], function (angular) {
     angular.bootstrap(document, ['app']);
-    $(function() {
-        jQuery.scrollSpeed(100, 1000);
-    });
+
 });
