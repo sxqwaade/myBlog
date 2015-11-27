@@ -14,9 +14,11 @@
     "requirejs": "latest"
   },
   "devDependencies": {
+    "body-parser": "^1.14.1",
     "chai": "*",
+    "cookie-parser": "^1.4.0",
     "errorhandler": "^1.4.2",
-    "express": "^3.0.6",
+    "express": "^4.2.2",
     "express-session": "^1.12.1",
     "grunt": "~0.4.0",
     "grunt-contrib-concat": "~0.1.1",
@@ -26,10 +28,13 @@
     "grunt-contrib-uglify": "~0.1.2",
     "grunt-contrib-watch": "^0.6.1",
     "grunt-sass": "^1.1.0",
+    "jade": "^1.11.0",
     "jscover": "*",
     "method-override": "^2.3.5",
     "mocha": "*",
+    "morgan": "^1.6.1",
     "rewire": "*",
+    "serve-favicon": "^2.3.0",
     "serve-static": "^1.10.0",
     "should": "*"
   },
