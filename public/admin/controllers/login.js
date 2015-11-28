@@ -16,14 +16,15 @@ define([ 'i18n!resources/nls/res'], function (res) {
                 password:''
             };
 
-            $scope.login = function () {
+           $scope.login = function () {
                 $http.post('/login', $scope.user).success(function (data) {
-                    console.log(data)
+
                     if (data.err) {
                         return $scope.err = data.err;
                     }
-                    $scope.$parent.resetLogin(data);
-                    $location.path("/");
+                   // $scope.$parent.resetLogin(data);
+                    console.log(data)
+                    $location.path("/aboutme");
                 });
             };
             $scope.register = function () {

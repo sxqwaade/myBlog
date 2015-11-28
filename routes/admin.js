@@ -7,11 +7,30 @@ exports.index = function(req,res){
     res.render('backend', {});
 };
 
-exports.editAboutme = function(req,res){
+exports.getLoginUser=function(req,res){
+    //console.log(req.session);
+    res.json(req.session["user"] || {status:0,info:"未登录"});
+};
 
-    AboutmeDao.create(new AboutModel({content:req.body.text}),function(data,err){
-        return res.json({data:"success",err:err});
-    });
+exports.editAboutme = function(req,res){
+    if("undefined" == typeof req.body.text ){
+        AboutmeDao.getByQuery({name:"aboutme"},function(error,data){
+            return res.json({data:"success",text:data});
+        });
+    }else{
+        AboutmeDao.countByQuery({name:"aboutme"},function(err,data){
+            console.log(data)
+            if(data == 0){
+                AboutmeDao.create(new AboutModel({name:"aboutme",text:req.body.text}),function(){
+                    return res.json({status:1,info:"success"});
+                });
+            }else{
+                AboutmeDao.update({name:req.body.name,content:req.body.text},function(err,data){
+                    return res.json({data:"success",text:data});
+                });
+            }
+        });
+    }
 };
 
 exports.getaboutme = function(req,res){

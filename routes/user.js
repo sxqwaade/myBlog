@@ -26,7 +26,7 @@ exports.create = function (req, res) {
         return res.json({err:err});
       }
       req.session["user"] = user;
-      res.json();
+      res.json({status:1,info:"注册成功"});
     });
   });
 
@@ -42,7 +42,8 @@ exports.login = function (req, res) {
     if (!user.authenticate(req.body.password))
       return res.json({err:'密码错误'});
     req.session["user"] = user;
-    res.json(user);
+    res.json({user:user,status:1,info:"登陆成功"});
+    //console.log(req.session)
   });
 };
 

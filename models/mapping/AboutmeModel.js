@@ -2,6 +2,7 @@ var mongoose = require('mongoose'),
     Schema = mongoose.Schema;
 
 var schema = new Schema({
+    name:{type:String},
     content:{ type:String },
     create_at:{ type:Date, default:Date.now },
     update_at:{ type:Date, default:Date.now },

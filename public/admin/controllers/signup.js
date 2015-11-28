@@ -21,7 +21,7 @@ define([], function () {
                 if (data.err) {
                     return $scope.err = data.err;
                 }
-                $location.path("/");
+                $location.path("/login");
             });
         };
     }];
