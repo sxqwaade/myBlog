@@ -49,6 +49,6 @@ exports.login = function (req, res) {
 
 exports.logout = function (req, res) {
   req.session["user"] = null;
-  var html = path.normalize(__dirname + '/../views/layout.jade');
+  var html = path.normalize(__dirname + '/../views/backend.jade');
   res.sendfile(html);
 };

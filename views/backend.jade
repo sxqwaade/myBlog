@@ -5,21 +5,22 @@ block staticfile
     link(rel="stylesheet" href="/css/reset.css" type='text/css' media="all")
 
 block content
-    nav(class="navbar navbar-default navbar-fixed-top")
-        div(class="container")
-    main()
-        div(class="container-fluid admin")
-            div(class="row")
-                div(class="col-md-3")
-                    ul(class="nav nav-pills nav-stacked")
-                        li(class="btn btn-default")
-                            a(href="/admin/#/blog").
-                                编辑博客
-                        li(class="btn btn-default")
-                            a(href="/admin/#/aboutme").
-                                关于我
-                div(class="col-md-9")
-                    div(class="ng-view")
+    main(ng-controller="LayoutController")
+        nav(class="navbar navbar-default navbar-fixed-top")
+            div(class="container")
+        main()
+            div(class="container-fluid admin")
+                div(class="row")
+                    div(class="col-md-3")
+                        ul(class="nav nav-pills nav-stacked")
+                            li(class="btn btn-default")
+                                a(href="/admin/#/blog").
+                                    编辑博客
+                            li(class="btn btn-default")
+                                a(href="/admin/#/aboutme").
+                                    关于我
+                    div(class="col-md-9")
+                        div(class="ng-view")
 block footer
     footer
         div(class="container")

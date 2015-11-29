@@ -17,5 +17,6 @@ module.exports = function(app){
     app.get('/admin',admin.index);
     app.post('/signup',user.create);
     app.post('/login',user.login);
+    app.get('/logout', user.logout);
     app.get('/checklogin',admin.getLoginUser);
 };
