@@ -211,7 +211,6 @@ main {
 
 .btn {
 	border: none;
-	border-radius: 0px;
 	padding: 10px 25px;
 	text-transform: uppercase;
 	transition: all 0.5s;

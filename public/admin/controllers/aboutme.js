@@ -1,21 +1,19 @@
 define(['jquery','../config/httpprovider'],function($){
 
-    var aboutmeController = ['$scope','$rootScope','$http','$location',function($scope,$rootscope,$http,$location){
-        $http.get('/checklogin').success(function(response){
-            if(response.status == 0){
-                $location.path("/login");
-            }else{
-                $location.path("/aboutme");
-            }
-        });
+    var aboutmeController = ['$scope','$rootScope','$http','$location',function($scope,$rootScope,$http,$location){
+
+        $rootScope.ajaxloading = true;
+
         $http.post("/editAboutme").success(function(data){
+            $rootScope.ajaxloading = false;
+
             var text = data.text[0].content;
             $scope.aboutmeText = text;
         });
 
         $scope.submit=function(){
             var req = {
-                method: 'POST',
+                method: 'post',
                 url: '/editAboutme',
                 data: { name:"aboutme",text: $scope.aboutmeText }
             };

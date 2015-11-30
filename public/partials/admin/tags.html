@@ -1,0 +1,10 @@
+<form class="form-search">
+    <input ng-model="tagname" type="text" class="input-medium search-query">
+    <button type="submit" ng-click="addtag()" class="btn">添加</button>
+</form>
+<div id="tags-list"  class="row">
+    <div ng-repeat="tag in tags" class="col-md-12 mgb20">
+        <span class="btn btn-info">{{tag}}</span>
+        <span ng-click="removetag(this,tag)" class="btn btn-danger">删除</span>
+    </div>
+</div>

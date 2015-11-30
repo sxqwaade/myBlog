@@ -11,6 +11,11 @@ define([ 'i18n!resources/nls/res'], function (res) {
         function ($scope, $rootScope, $http, $location) {
             $rootScope.title = res.login;
 
+
+            if($rootScope.checklogin){
+                $location.path('/');
+            }
+
             $scope.user = {
                 name:'',
                 password:''
@@ -23,8 +28,9 @@ define([ 'i18n!resources/nls/res'], function (res) {
                         return $scope.err = data.err;
                     }
                    // $scope.$parent.resetLogin(data);
-                    console.log(data)
-                    $location.path("/aboutme");
+                    $rootScope.checklogin = true;
+                    $scope.resetLogin(data.user);
+                    $location.path("/index");
                 });
             };
             $scope.register = function () {

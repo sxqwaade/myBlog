@@ -1,0 +1,20 @@
+<div class="row mgb20">
+    <span class="col-md-1">标签</span>
+    <span class="col-md-11 controls-row">
+        <select class="col-md-2 span2" ng-options="option for option in tags" ng-model="selected">
+        </select>
+    </span>
+</div>
+<div class="row mgb20">
+    <span class="col-md-1">标题</span>
+    <span class="col-md-11"><input class="col-md-10" type="text"></span>
+</div>
+<div class="row mgb20">
+    <span class="col-md-1">内容</span>
+    <span class="col-md-11">
+        <textarea id="admin-blog-content" class="col-md-10"></textarea>
+    </span>
+</div>
+<div class="row text-center">
+    <button class="btn-primary btn col-md-2" ng-click="submit()">提交</button>
+</div>

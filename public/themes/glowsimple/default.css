@@ -98,6 +98,7 @@ CONTENT
 .login-form .content {
     padding: 0 10px 25px 30px;
     float: left;
+    position: relative;
 }
 
 .login-form .content .input {
@@ -132,21 +133,23 @@ CONTENT
 [class^="icon-"] {
     width: 46px;
     height: 47px;
-    display: block;
+    display: none;
     position: absolute;
-    left: 2000px;
+    left: 0px;
+    top: 20px;
     padding-right: 2px;
     z-index: 3;
     border-radius: 5px 0 0 5px;
     background: rgba(65, 72, 72, 0.75);
+    opacity: 0;
 }
 
 .icon-user {
-    top: 147px;
+    top:25px;
 }
 
 .icon-pass {
-    top: 147px;
+    top: 25px;
 }
 
 .input,
@@ -159,7 +162,8 @@ CONTENT
 
 input[type="text"]:focus ~ #user-icon,
 input[type="password"]:focus ~ #user-pass {
-    left: -49px;
+    display: block;
+    opacity: 1;
 }
 
 /*******************
@@ -319,10 +323,6 @@ article.blogcontent {
         width: 300px;
     }
 
-    .icon-pass {
-        top: 220px;
-        margin-top: 20px;
-    }
 
     .login-form .footer {
         padding: 25px 30px 40px 50px;
