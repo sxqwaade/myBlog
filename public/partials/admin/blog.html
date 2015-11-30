@@ -2,7 +2,7 @@
     <section class="col-md-12 mgt20">
         <button ng-click="addblog()" class="btn btn-primary admin-blog-add mgb20">新增</button>
 
-        <article class="blog-item">
+        <article ng-repeat="blog in bloglist" data-id="{{blog._id}}" class="blog-item">
             <div class="row">
                 <div class="col-md-3">
                     <a href="#/blog">
@@ -12,24 +12,22 @@
                 <div class="col-md-9">
                     <p>
                         in
-                        <a href="#">html5</a>
-                        ,
-                        <a href="#">templates</a>
-                        <time>23-july-2015<time>
+                        <a href="#">{{blog.tag}}</a>
+                        <time>{{blog.create_at}}<time>
                     </p>
                     <h1>
-                        <a href="#/blog">A bird is known by its note, and a man by his talk.</a>
+                        <a href="#/blog">{{blog.title}}</a>
                     </h1>
                 </div>
             </div>
             <div class="row admin-blog-btn text-right mgb20">
-                <button class="btn-primary btn">编辑</button>
-                <button class="btn-danger btn">删除</button>
+                <button ng-click="editblog(blog._id)" class="btn-primary btn">编辑</button>
+                <button ng-click="removeblog(blog._id)" class="btn-danger btn">删除</button>
             </div>
         </article> <!-- /.blog-item -->
 
 
-        <div class="page-turn">
+        <div ng-show="pagination" class="page-turn">
             <div class="row">
                 <div class="col-md-6 col-md-offset-3 text-center">
                     <nav>

@@ -13,13 +13,13 @@ block content
                 div(class="row")
                     div(class="col-md-3" ng-show="checklogin")
                         ul(class="nav nav-pills nav-stacked")
-                            li(class="btn btn-default" ng-class="")
+                            li(class="btn btn-default" ng-class="{true:'active',false:''}[istag]")
                                 a(href="/admin/#/tags").
                                     编辑分类
-                            li(class="btn btn-default" ng-class="")
+                            li(class="btn btn-default" ng-class="{true:'active',false:''}[isblog]")
                                 a(href="/admin/#/blog").
                                     编辑博客
-                            li(class="btn btn-default" ng-class="")
+                            li(class="btn btn-default" ng-class="{true:'active',false:''}[isaboutme]")
                                 a(href="/admin/#/aboutme").
                                     关于我
                     div(class="col-md-9")

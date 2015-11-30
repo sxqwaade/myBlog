@@ -9,40 +9,13 @@
 
                     <div class="alert alert-info">
                         <a href="index.html">home</a>,
-                        <a href="#">css3</a>,
-                        <a href="#">jquery</a>,
-                        <a href="#">tutorials</a>
+                        <a href="#">{{blog.tag}}</a>,
                         updated
-                        <time>july 30,2015</time>
+                        <time>{{blog.update_at}}</time>
                     </div>
 
-                    <h1>Title</h1>
-                    <h2>Description</h2>
-                    <p>
-                        测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试
-                    </p>
-
-                    <div class="alert alert-success">
-                        <a href="http://themewagon.com">XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</a>
-                    </div>
-
-                    <div class="list-item">
-                        <h3>title</h3>
-                        <p>
-                             description
-                        </p>
-                        <div class="item-info text-center">
-                            <div class="row">
-                                <div class="col-md-8 col-md-offset-2">
-                                    <img class="img-responsive center-block" src="/img/bg.jpg" alt="Item number 1">
-                                    <a class="btn btn-success" target="_blank" href="http://technext.github.io/avada-plus/" >Demo</a>
-                                    <a class="btn btn-danger" target="_blank" href="http://themewagon.com/themes/avada-plus-free-responsive-html5-agency-template/" >More Info</a>
-                                </div>
-                            </div>
-                        </div> <!-- end of /.item-info -->
-                    </div> <!-- end of /.list-item -->
-
-
+                    <h1>{{blog.title}}</h1>
+                    <div btf-markdown="blog.content"></div>
 
                 </article>
 

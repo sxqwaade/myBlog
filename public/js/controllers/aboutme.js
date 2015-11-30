@@ -1,5 +1,5 @@
 
-define(['i18n!resources/nls/res','jquery','../directives/markDown'],function(res,$){
+define(['i18n!resources/nls/res','../directives/markDown'],function(res,$){
     var AboutmeController = ['$scope','$rootScope','$http','$location',
         function($scope,$rootScope,$http,$location){
             $http.get('/getaboutme').success(function(data){

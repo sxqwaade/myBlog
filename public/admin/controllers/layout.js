@@ -1,8 +1,20 @@
-define(['../app','i18n!resources/nls/res'], function (app,res) {
+define(['../app','','i18n!resources/nls/res'], function (app,$,res) {
     /* var bgimages=require("../../background/images").imageurls;*/
 
     return app.controller('LayoutController', function ($scope,$rootScope, $http,$location) {
-        $rootScope.ajaxloading = true;
+
+        $rootScope.ajaxloading = false;
+
+        switch($location.$$path){
+            case "/blog" : $scope.isblog = true;
+                break;
+            case "/tags" : $scope.istag = true;
+                break;
+            case "/aboutme" : $scope.isaboutme = true;
+                break;
+            default: $scope.isblog = false,$scope.istag = false, $scope.isaboutme = false;
+        }
+
         $http.get('/checklogin').success(function(user){
             $rootScope.ajaxloading = false;
             if(user.status == 0){

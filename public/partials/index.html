@@ -8,30 +8,28 @@
             <!-- blog-contents -->
             <section class="col-md-8">
 
-                <article class="blog-item">
+                <article ng-repeat="blog in bloglist" data-id="{{blog._id}}" class="blog-item mgb20">
                     <div class="row">
                         <div class="col-md-3">
-                            <a href="#/blog">
+                            <a href="#/blog?id={{blog._id}}">
                                 <img src="/img/bg.jpg" class="img-thumbnail center-block" alt="Blog Post Thumbnail">
                             </a>
                         </div>
                         <div class="col-md-9">
                             <p>
                                 in
-                                <a href="#">html5</a>
-                                ,
-                                <a href="#">templates</a>
-                                <time>23-july-2015<time>
+                                <a href="#/blog?id={{blog._id}}">{{blog.tag}}</a>
+                                <time>{{blog.create_at}}<time>
                             </p>
                             <h1>
-                                <a href="#/blog">A bird is known by its note, and a man by his talk.</a>
+                                <a href="#/blog?id={{blog._id}}">{{blog.title}}</a>
                             </h1>
                         </div>
                     </div>
-                </article> <!-- /.blog-item -->
+                </article>
 
 
-                <div class="page-turn">
+                <div ng-show="pagination" class="page-turn">
                     <div class="row">
                         <div class="col-md-6 col-md-offset-3 text-center">
                             <nav>
