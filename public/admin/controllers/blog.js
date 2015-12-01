@@ -4,7 +4,7 @@ define(['jquery','../config/httpprovider'],function($){
         $rootScope.ajaxloading = false;
         $scope.pagination = false;
         $http.get("/bloglist").success(function(response){
-            $scope.bloglist = response;
+            $scope.bloglist = response.bloglist;
         });
 
         $scope.addblog = function(){
@@ -20,7 +20,7 @@ define(['jquery','../config/httpprovider'],function($){
         $scope.removeblog = function(id){
             $http.post('/blogremove',{_id:id}).success(function(response){
                 $http.get("/bloglist").success(function(response){
-                    $scope.bloglist = response;
+                    $scope.bloglist = response.bloglist;
                 });
             });
         };
