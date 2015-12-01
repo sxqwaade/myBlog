@@ -22,8 +22,27 @@ define([ 'i18n!resources/nls/res','jquery'], function (res,$) {
         $rootScope.title= res.title;
 
         $http.get("/bloglist").success(function(response){
-            $scope.bloglist = response;
+            $scope.bloglist = response.bloglist;
+            $scope.tags = response.tag;
+            $scope.totalnum = response.bloglist.length;
         });
+
+
+
+        $scope.filterbytag = function(tag){
+            $scope.currentTag = tag;
+            $http.post('/filtertag',{tagname:tag}).success(function(response){
+                $scope.bloglist = response;
+            });
+        };
+
+        $scope.showall = function(){
+            $scope.currentTag = 'all';
+            $http.get("/bloglist").success(function(response){
+                $scope.bloglist = response.bloglist;
+                $scope.totalnum = response.bloglist.length;
+            });
+        }
     }];
 
     return IndexController;

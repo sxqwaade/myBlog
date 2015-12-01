@@ -40,4 +40,14 @@ select{
 #tags-list .btn{
   min-width: 90px;
 }
+
+.usercontent{
+  line-height: 50px;
+}
+.usercontent a{
+  color: #FFFFFF;
+}
+.tags-widget li{
+  cursor: pointer;
+}
 /*# sourceMappingURL=reset.css.map */

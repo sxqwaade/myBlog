@@ -5,7 +5,17 @@ var BlogDao = require("../dao/Blogdao.js"),
 exports.list = function (req, res) {
     BlogDao.getAll(function(err, blogs) {
         //res.render('blog', { title:'NJBlog.',data:blogs });
-        res.send(blogs);
+        var arr = [],obj={};
+        for(var i=0;i<blogs.length;i++){
+            (function(index){
+                BlogDao.countByQuery({tag:blogs[index].tag},function(err,data){
+                    eval('obj.'+blogs[index].tag+'='+data+'')
+                    if(index == blogs.length-1){
+                        return res.send({bloglist:blogs,tag:obj});
+                    }
+                });
+            })(i);
+        }
     });
 
 };
@@ -16,7 +26,6 @@ exports.create = function(req,res){
 };
 
 exports.detail=function(req,res){
-    console.log(req.body);
     BlogDao.getById(req.body.id,function(err,data){
         return res.json({status:1,info:"success",data:data});
     });
@@ -33,5 +42,11 @@ exports.edit=function(req,res){
 exports.remove = function(req,res){
     BlogDao.delete(BlogModel.findOne({_id:req.body._id}),function(err){
         res.json({data:"success"});
+    });
+};
+
+exports.filter=function(req,res){
+    BlogDao.getByQuery({tag:req.body.tagname},function(err,data){
+        res.json(data);
     });
 };

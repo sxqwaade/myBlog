@@ -1,4 +1,4 @@
-@import url(http://fonts.googleapis.com/css?family=Roboto:400,300,500,700);
+
 
 /*=======================================================================
 						Navigation menu
@@ -117,7 +117,7 @@
 
 body {
 	background-color: #f1eeed;
-	font-family: 'Roboto', sans-serif;
+	font-family: '微软雅黑';
 	font-size: 15px;
 	line-height: 1.82em;
 }

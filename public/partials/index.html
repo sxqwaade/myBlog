@@ -60,9 +60,8 @@
 
             <!-- sidebar -->
             <aside class="col-md-4 col-sm-8 col-xs-8">
-               <!-- <div class="sidebar">
 
-                    &lt;!&ndash; search option &ndash;&gt;
+
                     <div class="search-widget">
                         <div class="input-group margin-bottom-sm">
                             <input class="form-control" type="text" placeholder="Search here">
@@ -74,8 +73,8 @@
 
 
 
-                    &lt;!&ndash; subscribe form &ndash;&gt;
-                    <div class="subscribe-widget">
+
+                    <!--<div class="subscribe-widget">
                         <h4 class="text-capitalize text-center">
                             comments
                         </h4>
@@ -85,15 +84,20 @@
                                 <i class="fa fa-paper-plane fa-fw"></i>
                             </a>
                         </div>
+                    </div>-->
+                   <div class="tags-widget hidden-xs hidden-sm">
+                       <ul class="list-group">\
+                           <li class="list-group-item"  ng-class="{active: currentTag == 'all'}" ng-click="showall()">
+                               <span class="badge">{{totalnum}}</span>
+                               全部
+                           </li>
+                           <li class="list-group-item" ng-class="{active: currentTag == k}" ng-click="filterbytag(k)" ng-repeat="(k,v) in tags">
+                               <span class="badge">{{v}}</span>
+                               {{k}}
+                           </li>
+                       </ul>
                     </div>
 
-                    &lt;!&ndash; sidebar share button &ndash;&gt;
-                    <div class="share-widget hidden-xs hidden-sm">
-                        <ul class="social-share text-center">
-                        </ul> &lt;!&ndash; /.sidebar-share-button &ndash;&gt;
-                    </div> &lt;!&ndash; /.share-widget &ndash;&gt;
-
-                </div>-->
             </aside>
             <!-- end of sidebar -->
 

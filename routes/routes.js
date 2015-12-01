@@ -29,4 +29,5 @@ module.exports = function(app){
     app.post('/blogremove',blog.remove);
     app.get('/bloglist',blog.list);
     app.post('/blogdetail',blog.detail);
+    app.post("/filtertag",blog.filter);
 };
