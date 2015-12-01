@@ -16,6 +16,7 @@ exports.create = function(req,res){
 };
 
 exports.detail=function(req,res){
+    console.log(req.body);
     BlogDao.getById(req.body.id,function(err,data){
         return res.json({status:1,info:"success",data:data});
     });
@@ -23,7 +24,9 @@ exports.detail=function(req,res){
 
 exports.edit=function(req,res){
     BlogDao.update({_id:req.body.id},{title:req.body.title,content:req.body.content,tag:req.body.tag},function(err){
-        res.json(err);
+        if(!err){
+            res.json({status:1,info:"success"});
+        }
     });
 };
 

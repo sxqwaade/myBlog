@@ -1,4 +1,4 @@
-define(['../app','','i18n!resources/nls/res'], function (app,$,res) {
+define(['../app','i18n!resources/nls/res'], function (app,res) {
     /* var bgimages=require("../../background/images").imageurls;*/
 
     return app.controller('LayoutController', function ($scope,$rootScope, $http,$location) {

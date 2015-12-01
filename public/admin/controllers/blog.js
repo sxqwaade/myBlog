@@ -8,12 +8,13 @@ define(['jquery','../config/httpprovider'],function($){
         });
 
         $scope.addblog = function(){
+            $rootScope.blogid="";
             $location.path('/blogDetail');
         };
 
         $scope.editblog = function(id){
-            $location.path('/blogDetail');
             $rootScope.blogid = id;
+            $location.path('/blogDetail');
         };
 
         $scope.removeblog = function(id){
@@ -24,14 +25,6 @@ define(['jquery','../config/httpprovider'],function($){
             });
         };
 
-        /*$http.post("/bloglist").success(function(data){
-            var text = data.text[0].content;
-            $scope.aboutmeText = text;
-        });
-
-        $scope.submit=function(){
-
-        }*/
     }];
 
     return blogController;

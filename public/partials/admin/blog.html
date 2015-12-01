@@ -5,18 +5,18 @@
         <article ng-repeat="blog in bloglist" data-id="{{blog._id}}" class="blog-item">
             <div class="row">
                 <div class="col-md-3">
-                    <a href="#/blog">
+                    <a target="_blank" href="/#/blog?id={{blog._id}}">
                         <img src="/img/bg.jpg" class="img-thumbnail center-block" alt="Blog Post Thumbnail">
                     </a>
                 </div>
                 <div class="col-md-9">
                     <p>
                         in
-                        <a href="#">{{blog.tag}}</a>
+                        <a target="_blank" href="/#/blog?id={{blog._id}}">{{blog.tag}}</a>
                         <time>{{blog.create_at}}<time>
                     </p>
                     <h1>
-                        <a href="#/blog">{{blog.title}}</a>
+                        <a target="_blank" href="/#/blog?id={{blog._id}}">{{blog.title}}</a>
                     </h1>
                 </div>
             </div>
