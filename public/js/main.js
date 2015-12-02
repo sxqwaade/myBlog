@@ -11,6 +11,7 @@ require.config({
         i18n:'../lib/require/i18n',
         modernizr:'../lib/modernizr',
         html5shiv:'../lib/html5shiv',
+        mcore:'../lib/mcore.min',
         detectbrowser:'../lib/detectbrowser',
         scrollSpeed:'../lib/jquery/jQuery.scrollSpeed'
 
@@ -37,8 +38,10 @@ require(['angular',
          'app',
          'bootstrap',
          'jquery',
+         'mcore',
          'controllers/layout',
          'controllers/index',
+         'directives/bnLazySrc',
          'routes',
          'detectbrowser',
          'scrollSpeed'

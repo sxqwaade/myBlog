@@ -28,11 +28,31 @@ block content
                   li
                     a(href="https://github.com/sxqwaade" target="_blank").
                       Github
-      div(class="page" ng-view="")
+      div(class="page")
+          main()
+            div(class="container")
+                div(class="row")
+                    section(class="col-md-8" ng-view="" ng-class="{blog_detail:isblogdetail==true}")
+                    aside(class="col-md-4 col-sm-8 col-xs-8")
+                        div(class="search-widget")
+                            div(class="input-group margin-bottom-sm")
+                                input(class="form-control" type="text" placeholder="Search here")
+                                a(href="#" class="input-group-addon")
+                                    i(class="fa fa-search fa-fw")
+                        div(class="tags-widget hidden-xs hidden-sm")
+                            ul(class="list-group")
+                                li(class="list-group-item"  ng-class="{active: currentTag == 'all'}" ng-click="showall()")
+                                    span(class="badge").
+                                        {{totalnum}}
+                                    | 全部
+                                li(class="list-group-item" ng-class="{active: currentTag == k}" ng-click="filterbytag(k)" ng-repeat="(k,v) in tags")
+                                    span(class="badge").
+                                        {{v}}
+                                    | {{k}}
 
 block footer
   footer
     div(class="container")
         div(class="row")
-            div(class="col-md-4 col-sm-4").
+            div(class="col-md-12 col-sm-12").
                 Every man is the architect of his own fortune.

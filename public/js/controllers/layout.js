@@ -1,13 +1,50 @@
 'use strict';
 //TODO Define module
-define(['../app', 'i18n!resources/nls/res', '../../background/images'], function (app, res, images) {
+define(['../app', 'i18n!resources/nls/res','../../background/images'], function (app, res,images) {
     /* var bgimages=require("../../background/images").imageurls;*/
 
-    return app.controller('LayoutController', function ($scope, $http) {
-            $(".navbar-nav li").click(function(){
-                $(".navbar-nav li").removeClass('active');
-                $(this).addClass('active');
-            });
+    return app.controller('LayoutController', function ($scope,$rootScope, $http,$location) {
+        $(".navbar-nav li").click(function(){
+            $(".navbar-nav li").removeClass('active');
+            $(this).addClass('active');
+        });
 
+
+        var imgs = images.imageurls,
+            randombg = function(){return Math.round(Math.random()*(imgs.length - 1));};
+
+        m$.Image.preLoadImages(imgs.slice(0,4));
+
+        $rootScope.filterbytag = function(tag){
+            $rootScope.currentTag = tag;
+            $http.post('/filtertag',{tagname:tag}).success(function(response){
+                for(var i = 0;i<response.length;i++){
+                    response[i].bg = imgs[randombg()];
+                }
+                $rootScope.bloglist = response;
+                $location.path("/");
+            });
+        };
+
+        $rootScope.showall = function(){
+            $rootScope.currentTag = 'all';
+            $http.get("/bloglist").success(function(response){
+                for(var i = 0;i<response.bloglist.length;i++){
+                    response.bloglist[i].bg = imgs[randombg()];
+                }
+                $rootScope.bloglist = response.bloglist;
+                $rootScope.totalnum = response.bloglist.length;
+                $location.path("/");
+            });
+        };
+
+        $http.get("/bloglist").success(function(response){
+            for(var i = 0;i<response.bloglist.length;i++){
+                response.bloglist[i].bg = imgs[randombg()];
+            }
+            $rootScope.bloglist = response.bloglist;
+            $rootScope.tags = response.tag;
+            $rootScope.totalnum = response.bloglist.length;
+        });
     });
 });

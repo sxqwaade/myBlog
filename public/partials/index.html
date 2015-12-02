@@ -1,107 +1,46 @@
-<!--<div id="scrollbar">
-    <div class="handle"></div>
-</div>-->
-<main>
-    <div class="container">
-        <div class="row">
-
-            <!-- blog-contents -->
-            <section class="col-md-8">
-
-                <article ng-repeat="blog in bloglist" data-id="{{blog._id}}" class="blog-item mgb20">
-                    <div class="row">
-                        <div class="col-md-3">
-                            <a href="#/blog?id={{blog._id}}">
-                                <img src="/img/bg.jpg" class="img-thumbnail center-block" alt="Blog Post Thumbnail">
-                            </a>
-                        </div>
-                        <div class="col-md-9">
-                            <p>
-                                in
-                                <a href="#/blog?id={{blog._id}}">{{blog.tag}}</a>
-                                <time>{{blog.create_at}}<time>
-                            </p>
-                            <h1>
-                                <a href="#/blog?id={{blog._id}}">{{blog.title}}</a>
-                            </h1>
-                        </div>
-                    </div>
-                </article>
-
-
-                <div ng-show="pagination" class="page-turn">
-                    <div class="row">
-                        <div class="col-md-6 col-md-offset-3 text-center">
-                            <nav>
-                                <ul class="pagination pagination-sm">
-                                    <li class="disabled">
-                                        <a href="#" aria-label="Previous">
-                                            <span aria-hidden="true">Prev</span>
-                                        </a>
-                                    </li>
-                                    <li class="active"><a href="index.html">1</a></li>
-                                    <li><a href="page2.html">2</a></li>
-                                    <li><a href="page3.html">3</a></li>
-                                    <li><a href="page4.html">4</a></li>
-                                    <li><a href="page5.html">5</a></li>
-                                    <li>
-                                        <a href="page6.html" aria-label="Next">
-                                            <span aria-hidden="true">Next</span>
-                                        </a>
-                                    </li>
-                                </ul> <!-- /.pagination -->
-                            </nav>
-                        </div>
-                    </div>
-                </div> <!-- /.page-turn -->
-
-            </section>
-            <!-- end of blog-contents -->
-
-            <!-- sidebar -->
-            <aside class="col-md-4 col-sm-8 col-xs-8">
-
-
-                    <div class="search-widget">
-                        <div class="input-group margin-bottom-sm">
-                            <input class="form-control" type="text" placeholder="Search here">
-                            <a href="#" class="input-group-addon">
-                                <i class="fa fa-search fa-fw"></i>
-                            </a>
-                        </div>
-                    </div>
-
-
-
-
-                    <!--<div class="subscribe-widget">
-                        <h4 class="text-capitalize text-center">
-                            comments
-                        </h4>
-                        <div class="input-group margin-bottom-sm">
-                            <input class="form-control" type="text" placeholder="Your Email">
-                            <a href="#" class="input-group-addon">
-                                <i class="fa fa-paper-plane fa-fw"></i>
-                            </a>
-                        </div>
-                    </div>-->
-                   <div class="tags-widget hidden-xs hidden-sm">
-                       <ul class="list-group">\
-                           <li class="list-group-item"  ng-class="{active: currentTag == 'all'}" ng-click="showall()">
-                               <span class="badge">{{totalnum}}</span>
-                               全部
-                           </li>
-                           <li class="list-group-item" ng-class="{active: currentTag == k}" ng-click="filterbytag(k)" ng-repeat="(k,v) in tags">
-                               <span class="badge">{{v}}</span>
-                               {{k}}
-                           </li>
-                       </ul>
-                    </div>
-
-            </aside>
-            <!-- end of sidebar -->
-
+<article ng-repeat="blog in bloglist" data-id="{{blog._id}}" class="blog-item mgb20">
+    <div class="row">
+        <div class="col-md-3">
+            <a href="#/blog?id={{blog._id}}&bg={{blog.bg}}">
+                <img bn-lazy-src="{{blog.bg}}" src="/img/transparent.gif" class="img-thumbnail center-block bg" alt="Blog Post Thumbnail">
+            </a>
         </div>
-    </div> <!-- end of /.container -->
+        <div class="col-md-9">
+            <p>
+                in
+                <a ng-click="filterbytag(blog.tag)" href="javascript:void(0);">{{blog.tag}}</a>
+                <time>{{blog.create_at}}<time>
+            </p>
+            <h1>
+                <a href="#/blog?id={{blog._id}}">{{blog.title}}</a>
+            </h1>
+        </div>
+    </div>
+</article>
 
-</main>
+
+<div ng-show="pagination" class="page-turn">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3 text-center">
+            <nav>
+                <ul class="pagination pagination-sm">
+                    <li class="disabled">
+                        <a href="#" aria-label="Previous">
+                            <span aria-hidden="true">Prev</span>
+                        </a>
+                    </li>
+                    <li class="active"><a href="index.html">1</a></li>
+                    <li><a href="page2.html">2</a></li>
+                    <li><a href="page3.html">3</a></li>
+                    <li><a href="page4.html">4</a></li>
+                    <li><a href="page5.html">5</a></li>
+                    <li>
+                        <a href="page6.html" aria-label="Next">
+                            <span aria-hidden="true">Next</span>
+                        </a>
+                    </li>
+                </ul> <!-- /.pagination -->
+            </nav>
+        </div>
+    </div>
+</div> <!-- /.page-turn -->
