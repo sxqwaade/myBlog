@@ -9,10 +9,10 @@
             <p>
                 in
                 <a ng-click="filterbytag(blog.tag)" href="javascript:void(0);">{{blog.tag}}</a>
-                <time>{{blog.create_at}}<time>
+                <time>{{blog.create_at|date}}<time>
             </p>
             <h1>
-                <a href="#/blog?id={{blog._id}}">{{blog.title}}</a>
+                <a href="#/blog?id={{blog._id}}&bg={{blog.bg}}">{{blog.title}}</a>
             </h1>
         </div>
     </div>

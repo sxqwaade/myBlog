@@ -11,6 +11,7 @@ var admin = require('./admin');
 var user = require('./user');
 var blog = require('./blog');
 var tags = require('./tags');
+var tourist = require('./tourist');
 
 module.exports = function(app){
     app.get('/', homepage.index);
@@ -30,4 +31,6 @@ module.exports = function(app){
     app.get('/bloglist',blog.list);
     app.post('/blogdetail',blog.detail);
     app.post("/filtertag",blog.filter);
+    app.post("/addComment",tourist.addComment);
+    app.get("/getComment",tourist.getComment);
 };
