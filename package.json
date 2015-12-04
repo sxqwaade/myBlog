@@ -4,7 +4,7 @@
   "private": true,
   "main": "app.js",
   "dependencies": {
-    "express": "3.0.6",
+    "express": "4.13.1",
     "ejs": "latest",
     "mongoose": "latest",
     "colors": "latest",
