@@ -20,25 +20,33 @@ define(['i18n!resources/nls/res','jquery','../../background/images','../config/h
                     }
                 }
                 $scope.relateblog = arr;
+
             });
 
+            $scope.feedback = [];
+
             $http.get("/getComment?comment_id="+ $scope.blogid+"").success(function(data){
-                $scope.feedback = data;
+                $scope.feedback.push.apply( $scope.feedback,data);
             });
+
             $scope.tourist = {
                 name:'',
                 email:'',
                 site:'',
                 text:'',
+                title:$scope.blog.title,
                 comment_id: $scope.blogid
             }
+
             $scope.submit = function(isValid){
+                $scope.tourist.title = $scope.blog.title;
                 if (isValid) {
                     $http.post('/addComment',$scope.tourist).success(function(data){
-                        console.log(data.info);
                         if(data.status == 1){
+                            console.log(data.data)
                             $scope.responseSuccess = data.info;
                             $scope.responseErr = "";
+                            $scope.feedback.push.call( $scope.feedback,data.data);
                         }else{
                             $scope.responseSuccess = "";
                             $scope.responseErr = data.info;

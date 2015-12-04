@@ -1,5 +1,5 @@
-body {
-  font-family: "FontAwesome"; }
+body,h3,p,span,input,select{
+  font-family: "微软雅黑"!important; }
 
 .loading{
   width: 658px;
@@ -55,7 +55,7 @@ main{
   z-index: 5;
   padding-bottom: 70px;
 }
-footer{
+body > footer{
   position: fixed;
   bottom:0;
   z-index: 5;
@@ -80,7 +80,7 @@ footer{
   height: 70px;
 }
 .blog_detail{
-  background-color:#f1eeed;
+  background-color:#FFFFFF;
 }
 .logo{
   width: 40px!important;
@@ -90,5 +90,32 @@ footer{
 }
 .search.error{
   border: 1px solid red!important;
+}
+.tags-widget{
+  background-color: #FFFFFF;
+}
+.tags-widget blockquote{
+  border: 5px solid #FFF;
+  background-color: #f3f3f3;
+  padding: 10px;
+  margin: 15px auto;
+  border-radius: 5px;
+  box-shadow: 1px 1px 1px #aaa;
+  -moz-transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+}
+#comment h3{
+  margin: 0 10px;
+  padding: 10px 0;
+  border-bottom: 1px solid #e4e4e4;
+}
+#comment .text-left,#comment .text-right{
+  width: 45%;
+  display: inline-block;
+}
+#comment blockquote:hover{
+  background-color: #999999;
 }
 /*# sourceMappingURL=reset.css.map */

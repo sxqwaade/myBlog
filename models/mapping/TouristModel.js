@@ -6,6 +6,7 @@ var schema = new Schema({
     email:{type:String},
     site:{type:String},
     text:{type:String},
+    title:{type:String},
     comment_id:{type:String},
     create_time:{type:Date, default:Date.now}
 });

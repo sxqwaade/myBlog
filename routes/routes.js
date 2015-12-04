@@ -33,4 +33,5 @@ module.exports = function(app){
     app.post("/filtertag",blog.filter);
     app.post("/addComment",tourist.addComment);
     app.get("/getComment",tourist.getComment);
+    app.get("/newestComment",tourist.getNewest);
 };

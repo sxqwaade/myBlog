@@ -39,17 +39,28 @@ block content
                                 input(class="form-control search" ng-class="{true:'error',false:''}[filtererror]" my-enter="filterbytag(keywords)" type="text" ng-model="keywords" placeholder="搜索标签或标题")
                                 a(href="javascript:void(0)" ng-click="filterbytag(keywords)" class="input-group-addon")
                                     i(class="fa fa-search fa-fw")
-                        div(class="tags-widget hidden-xs hidden-sm")
+                        div(id="comment" class="tags-widget hidden-xs hidden-sm" ng-show="newestComment")
                             h3.
                                 最新评论
-
+                            blockquote(ng-repeat="newcomment in newestComment")
+                                a(href="#/blog?id={{newcomment.comment_id}}")
+                                    p.
+                                        {{newcomment.title}}
+                                    p.
+                                        {{newcomment.text}}
+                                    footer
+                                        span(class="text-left").
+                                            {{newcomment.name}}
+                                        span(class="text-right").
+                                            {{newcomment.create_time|date}}
                         div(class="tags-widget hidden-xs hidden-sm")
+
                             ul(class="list-group")
-                                li(class="list-group-item"  ng-class="{active: currentTag == 'all'}" ng-click="showall()")
+                                li(class="list-group-item "  ng-class="{active: currentTag == 'all'}" ng-click="showall()")
                                     span(class="badge").
                                         {{totalnum}}
                                     | 全部
-                                li(class="list-group-item" ng-class="{active: currentTag == k}" ng-click="filterbytag(k)" ng-repeat="(k,v) in tags")
+                                li(class="list-group-item " ng-class="{active: currentTag == k}" ng-click="filterbytag(k)" ng-repeat="(k,v) in tags")
                                     span(class="badge").
                                         {{v}}
                                     | {{k}}

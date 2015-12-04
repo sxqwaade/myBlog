@@ -67,5 +67,8 @@ define(['../app', 'i18n!resources/nls/res','../../background/images','../directi
             $rootScope.totalnum = response.bloglist.length;
         });
 
+        $http.get("/newestComment").success(function(data){
+            $rootScope.newestComment = data;
+        });
     });
 });

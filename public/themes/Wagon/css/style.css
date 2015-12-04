@@ -781,7 +781,7 @@ only screen and (max-device-width : 550px){
 }
 
 .share-widget .social-share li a i, 
-footer .social-share li a i {
+body > footer .social-share li a i {
 	background-color: #ffffff;
 	border: 1px solid #000000;
 	border-radius: 0px;
@@ -831,10 +831,10 @@ footer .social-share li a i {
 }
 
 /*============================================================================
-							Footer
+							body > footer
 =============================================================================*/
 
-footer {
+body > footer {
     background-color: #1E1E1E;
     color: #ffffff;
     font-size: 14px;
@@ -844,52 +844,52 @@ footer {
     width: 100%;
 }
 
-footer a {
+body > footer a {
     color: #D2924C;
     font-size: 16px;
     font-weight: 400;
 }
 
-footer a:hover {
+body > footer a:hover {
     color: #E4840D;
 }
 
-footer .social-share {
+body > footer .social-share {
     margin-top: 4px;
 }
 
-footer .social-share li a i {
+body > footer .social-share li a i {
 	background-color: #ffffff;
 	border-radius: 50%;
 	border: 1px solid #1E1E1E;
 }
 
-footer .social-share li a i:hover {
+body > footer .social-share li a i:hover {
     background-color: #AF6F20;
     color: #ffffff;
 }
 
-footer .footer-nav {
+body > footer .body > footer-nav {
     float: right;
     margin-top: 10px;
 }
 
-footer .footer-nav li {
+body > footer .body > footer-nav li {
     display: inline-block;
     list-style: none;
     margin-left: 15px;
 }
 
 @media (max-width: 767px) {
-	footer {
+	body > footer {
 		text-align: center;
 	}
-	footer .footer-nav {
+	body > footer .body > footer-nav {
 		float: none;
 		padding: 0px;
 	}
 
-	footer .social-share {
+	body > footer .social-share {
 		margin: 20px 0px;
 	}
 }
