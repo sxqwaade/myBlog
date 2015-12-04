@@ -46,7 +46,14 @@ exports.remove = function(req,res){
 };
 
 exports.filter=function(req,res){
-    BlogDao.getByQuery({tag:req.body.tagname},function(err,data){
-        res.json(data);
-    });
+    if(!req.body.title){
+        BlogDao.getByQuery({tag:req.body.tagname},function(err,data){
+            res.json(data);
+        });
+    }else{
+        BlogDao.getByQuery({title:req.body.title},function(err,data){
+            res.json(data);
+        });
+    }
+
 };

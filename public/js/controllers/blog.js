@@ -35,7 +35,14 @@ define(['i18n!resources/nls/res','jquery','../../background/images','../config/h
             $scope.submit = function(isValid){
                 if (isValid) {
                     $http.post('/addComment',$scope.tourist).success(function(data){
-
+                        console.log(data.info);
+                        if(data.status == 1){
+                            $scope.responseSuccess = data.info;
+                            $scope.responseErr = "";
+                        }else{
+                            $scope.responseSuccess = "";
+                            $scope.responseErr = data.info;
+                        }
                     });
                 }
             };

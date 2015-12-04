@@ -41,7 +41,6 @@ require(['angular',
          'mcore',
          'controllers/layout',
          'controllers/index',
-         'directives/bnLazySrc',
          'routes',
          'detectbrowser',
          'scrollSpeed'

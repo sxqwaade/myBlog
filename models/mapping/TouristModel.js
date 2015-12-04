@@ -6,7 +6,8 @@ var schema = new Schema({
     email:{type:String},
     site:{type:String},
     text:{type:String},
-    comment_id:{type:Number}
+    comment_id:{type:String},
+    create_time:{type:Date, default:Date.now}
 });
 
 mongoose.model('Tourist',schema);

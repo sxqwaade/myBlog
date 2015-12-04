@@ -85,4 +85,10 @@ footer{
 .logo{
   width: 40px!important;
 }
+.maillink{
+  text-decoration: underline;
+}
+.search.error{
+  border: 1px solid red!important;
+}
 /*# sourceMappingURL=reset.css.map */

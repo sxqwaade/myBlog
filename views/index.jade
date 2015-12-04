@@ -36,9 +36,13 @@ block content
                     aside(class="col-md-4 col-sm-8 col-xs-8")
                         div(class="search-widget")
                             div(class="input-group margin-bottom-sm")
-                                input(class="form-control" type="text" placeholder="Search here")
-                                a(href="#" class="input-group-addon")
+                                input(class="form-control search" ng-class="{true:'error',false:''}[filtererror]" my-enter="filterbytag(keywords)" type="text" ng-model="keywords" placeholder="搜索标签或标题")
+                                a(href="javascript:void(0)" ng-click="filterbytag(keywords)" class="input-group-addon")
                                     i(class="fa fa-search fa-fw")
+                        div(class="tags-widget hidden-xs hidden-sm")
+                            h3.
+                                最新评论
+
                         div(class="tags-widget hidden-xs hidden-sm")
                             ul(class="list-group")
                                 li(class="list-group-item"  ng-class="{active: currentTag == 'all'}" ng-click="showall()")
