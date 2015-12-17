@@ -3,9 +3,9 @@ require.config({
     paths: {
         jquery: '../lib/jquery/jquery-2.1.3.min',
         bootstrap: '../lib/bootstrap/js/bootstrap.min',
-        angular: '../lib/angular/angular',
-        angularResource: '../lib/angular/angular-resource',
-        angularSanitize: '../lib/angular/angular-sanitize',
+        angular: '../lib/angular/angular.min',
+        angularResource: '../lib/angular/angular-resource.min',
+        angularSanitize: '../lib/angular/angular-sanitize.min',
         angularRoute: '../lib/angular/angular-route.min',
         angularMocks:'../lib/angular/angular-mocks',
         angularLoadingbar:'../lib/angular/loading-bar',
