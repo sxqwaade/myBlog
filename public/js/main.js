@@ -20,8 +20,8 @@ require.config({
     },
     shim: {
         'angular' : {'exports' : 'angular'},
-        'angular-resource' : {deps:['angular']},
-        'angular-sanitize' : {deps:['angular']},
+        'angularResource' : {deps:['angular']},
+        'angularSanitize' : {deps:['angular']},
         'angularLoadingbar' : {deps:['angular']},
         'angularRoute' : {deps:['angular']},
         'bootstrap': {deps:['jquery']},
