@@ -1,6 +1,8 @@
 body,h3,p,span,input,select{
   font-family: "微软雅黑"!important; }
-
+body{
+  background: url(/img/global-bg.png) repeat;
+}
 .loading{
   width: 658px;
   height: 493px;

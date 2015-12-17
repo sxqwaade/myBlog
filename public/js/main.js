@@ -6,7 +6,9 @@ require.config({
         angular: '../lib/angular/angular',
         angularResource: '../lib/angular/angular-resource',
         angularSanitize: '../lib/angular/angular-sanitize',
+        angularRoute: '../lib/angular/angular-route.min',
         angularMocks:'../lib/angular/angular-mocks',
+        angularLoadingbar:'../lib/angular/loading-bar',
         showdown: '../lib/Showdown.min',
         i18n:'../lib/require/i18n',
         modernizr:'../lib/modernizr',
@@ -20,6 +22,8 @@ require.config({
         'angular' : {'exports' : 'angular'},
         'angular-resource' : {deps:['angular']},
         'angular-sanitize' : {deps:['angular']},
+        'angularLoadingbar' : {deps:['angular']},
+        'angularRoute' : {deps:['angular']},
         'bootstrap': {deps:['jquery']},
         'scrollSpeed':{deps:['jquery']},
         'angularMocks':{deps:['angular']},
@@ -35,6 +39,8 @@ require.config({
 });
 
 require(['angular',
+         'angularLoadingbar',
+         'angularRoute',
          'app',
          'bootstrap',
          'jquery',

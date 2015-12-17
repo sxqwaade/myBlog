@@ -44,4 +44,8 @@ define(['../app'],function(app){
             return angular.isObject(data) && String(data) !== '[object File]' ? param(data) : data;
         }];
     });
+
+    app.config(function(cfpLoadingBarProvider) {
+        cfpLoadingBarProvider.includeSpinner = true;
+    });
 });

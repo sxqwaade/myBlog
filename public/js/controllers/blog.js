@@ -1,7 +1,8 @@
 
-define(['i18n!resources/nls/res','jquery','../../background/images','../config/httpprovider'],function(res,$,images){
+define(['i18n!resources/nls/res','jquery','../../background/images'],function(res,$,images){
     var BlogController = ['$scope','$rootScope','$http','$location',
         function($scope,$rootScope,$http,$location){
+            $rootScope.start();
             $location.$$path == "/blog" ? $rootScope.isblogdetail = true : $rootScope.isblogdetail = false;
             $scope.blog={
                 title:"",
@@ -19,6 +20,7 @@ define(['i18n!resources/nls/res','jquery','../../background/images','../config/h
                         arr.push({id:$rootScope.bloglist[i]._id,title:$rootScope.bloglist[i].title});
                     }
                 }
+                $rootScope.complete();
                 $scope.relateblog = arr;
 
             });
@@ -43,7 +45,6 @@ define(['i18n!resources/nls/res','jquery','../../background/images','../config/h
                 if (isValid) {
                     $http.post('/addComment',$scope.tourist).success(function(data){
                         if(data.status == 1){
-                            console.log(data.data)
                             $scope.responseSuccess = data.info;
                             $scope.responseErr = "";
                             $scope.feedback.push.call( $scope.feedback,data.data);

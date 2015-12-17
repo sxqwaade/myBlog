@@ -1,9 +1,17 @@
 'use strict';
 //TODO Define module
-define(['../app', 'i18n!resources/nls/res','../../background/images','../directives/bnLazySrc','../directives/myEnter'], function (app, res,images) {
+define(['../app','i18n!resources/nls/res','../../background/images','../directives/bnLazySrc','../directives/myEnter','../config/httpprovider'], function (app,res,images) {
     /* var bgimages=require("../../background/images").imageurls;*/
 
-    return app.controller('LayoutController', function ($scope,$rootScope, $http,$location) {
+    return app.controller('LayoutController',function ($scope,$rootScope, $http,$location,cfpLoadingBar) {
+        $rootScope.start = function() {
+            cfpLoadingBar.start();
+        };
+
+        $rootScope.complete = function () {
+            cfpLoadingBar.complete();
+        }
+        $rootScope.start();
         $(".navbar-nav li").click(function(){
             $(".navbar-nav li").removeClass('active');
             $(this).addClass('active');
@@ -16,6 +24,7 @@ define(['../app', 'i18n!resources/nls/res','../../background/images','../directi
         m$.Image.preLoadImages(imgs.slice(0,4));
 
         $rootScope.filterbytag = function(tag){
+            $rootScope.start();
             var data={};
             if(tag == ""){
                 $scope.filtererror = false;
@@ -48,7 +57,9 @@ define(['../app', 'i18n!resources/nls/res','../../background/images','../directi
 
         $rootScope.showall = function(){
             $rootScope.currentTag = 'all';
+            $rootScope.start();
             $http.get("/bloglist").success(function(response){
+                $rootScope.complete();
                 for(var i = 0;i<response.bloglist.length;i++){
                     response.bloglist[i].bg = imgs[randombg()];
                 }
@@ -65,6 +76,7 @@ define(['../app', 'i18n!resources/nls/res','../../background/images','../directi
             $rootScope.bloglist = response.bloglist;
             $rootScope.tags = response.tag;
             $rootScope.totalnum = response.bloglist.length;
+            $rootScope.complete();
         });
 
         $http.get("/newestComment").success(function(data){

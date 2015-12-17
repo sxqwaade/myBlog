@@ -3,6 +3,7 @@ extends layout
 block staticfile
     script(data-main="js/main" src="lib/require/require.min.js")
     link(rel="stylesheet" href="css/reset.css" type='text/css' media="all")
+    link(rel="stylesheet" href="css/loading-bar.css" type='text/css' media="all")
 
 block content
     main(ng-controller='LayoutController')
@@ -15,7 +16,7 @@ block content
                   span(class="icon-bar")
                   span(class="icon-bar")
                   span(class="icon-bar")
-                a(class="navbar-brand" href="/").
+                a(class="navbar-brand" href="/#/").
                     SHAWN SONG
             div(class="collapse navbar-collapse" id="bs-example-navbar-collapse-1")
                 ul(class="nav navbar-nav navbar-right")
