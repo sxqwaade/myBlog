@@ -14797,9 +14797,9 @@ define('controllers/layout',['../app', 'i18n!resources/nls/res', '../../backgrou
 ;
 /**
  * Created with JetBrains WebStorm.
- * User: c-sailor.zhang
- * Date: 1/30/13
- * Time: 10:21 AM
+ * User: shawn.song
+ * Date: 12/21/15
+ * Time: 5:17 PM
  * To change this template use File | Settings | File Templates.
  */
 /*//TODO Define module
@@ -14876,9 +14876,9 @@ app.directive('compare', function () {
 });
 /**
  * Created with JetBrains WebStorm.
- * User: c-sailor.zhang
- * Date: 1/30/13
- * Time: 10:01 AM
+ * User: shawn.song
+ * Date: 12/21/15
+ * Time: 5:17 PM
  * To change this template use File | Settings | File Templates.
  */
 //TODO Define module
@@ -14928,9 +14928,9 @@ var LogoutController = ["$scope", "$rootScope", "$http", "$location",
 });
 /**
  * Created with JetBrains WebStorm.
- * User: c-sailor.zhang
- * Date: 2/1/13
- * Time: 3:13 PM
+ * User: shawn.song
+ * Date: 12/21/15
+ * Time: 5:17 PM
  * To change this template use File | Settings | File Templates.
  */
 
