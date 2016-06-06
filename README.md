@@ -8,7 +8,7 @@ npm install
 ---------
 run your mongoDB
 ```bash
-  ./bin/mongod  --dbpath 'path of your DB folder'
+  ./bin/mongod  --dbpath **
 ```
 
 run site
